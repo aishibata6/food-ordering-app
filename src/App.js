@@ -7,6 +7,41 @@ import CartContextProvider from "./store/CartProvider";
 
 function App() {
   const [isCartShowing, setIsCartShowing] = useState(false);
+  // const [meals, setMeals] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [isError, setIsError] = useState(false);
+
+  // const fetchMeals = useCallback(async () => {
+  //   setIsLoading(true);
+  //   setIsError(null);
+  //   try {
+  //     const response = await fetch(
+  //       "https://food-ordering-app-915b6-default-rtdb.firebaseio.com/meals.json"
+  //     );
+  //     if (!response.ok) {
+  //       throw new Error("Something went wrong!");
+  //     }
+  //     const data = await response.json();
+  //     const loadedMeals = [];
+
+  //     for (const key in data) {
+  //       loadedMeals.push({
+  //         id: key,
+  //         name: data[key].name,
+  //         description: data[key].description,
+  //         price: data[key].price,
+  //       });
+  //     }
+  //     setMeals(loadedMeals);
+  //   } catch (error) {
+  //     setIsError(error.message);
+  //   }
+  //   setIsLoading(false);
+  // }, []);
+
+  // useEffect(() => {
+  //   fetchMeals();
+  // }, [fetchMeals]);
 
   const showCartHandler = (e) => {
     console.log("button has been pressed.");
@@ -26,6 +61,8 @@ function App() {
         <Header onShowCart={showCartHandler} />
         <main>
           <Meals />
+          {/* {isLoading && <p>Loading...</p>}
+          {isError && <p>An error occured.</p>} */}
         </main>
       </div>
     </CartContextProvider>
